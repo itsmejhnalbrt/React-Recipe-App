@@ -1,0 +1,66 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-style: 'Monserrat', sans-serif;
+}
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0% 20%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h4{
+  font-size: 1rem;
+  color: rgb(56, 56, 56);
+ 
+}
+
+h3{
+  font-size: 1.5rem;
+  color: rgb(56, 56, 56);
+  line-height: 1.5rem;
+  margin: 2rem 0rem;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(56, 56, 56);
+}
+
+.recipe__title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: 1rem 0rem;
+  text-transform: capitalize;
+}
+
+.splide__pagination.margin-t-pagination{
+  position: relative;
+  top: 1rem;
+}
+
+.splide__pagination.margin-t-pagination li > button{
+  transition: 250ms ease-in-out;
+}
+
+.splide__pagination.margin-t-pagination li > button[aria-selected = true]{
+  background: linear-gradient(to right, #f27121, #e94057)
+}
+
+.splide__pagination.margin-t-pagination li > button:hover{
+  background: linear-gradient(to right, #f27121, #e94057)
+}
