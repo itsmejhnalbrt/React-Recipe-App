@@ -38,7 +38,7 @@ const SForm = styled.form`
     }
 `;
 
-function Searched() {
+function Search() {
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
 
@@ -57,13 +57,20 @@ function Searched() {
     }; 
 
   return (
-    <SForm onSubmit={submitHandler}>
+    // <SForm onSubmit={submitHandler}>
+    //     <div>
+    //         <FaSearch></FaSearch>
+    //         <input onChange = {searchInput} type="text" value={search}/>
+    //     </div>
+    // </SForm>
+
+    <form onSubmit={submitHandler}>
         <div>
             <FaSearch></FaSearch>
             <input onChange = {searchInput} type="text" value={search}/>
         </div>
-    </SForm>
+    </form>
   )
 }
 
-export default Searched;
+export default Search;
