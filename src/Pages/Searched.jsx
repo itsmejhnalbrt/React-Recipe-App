@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Grid = styled.div`
@@ -34,7 +34,7 @@ img{
   transition: ease-in-out 250ms;
 }
 
-a{
+p{
   display: flex;
   position: absolute;
   justify-content: center;
@@ -80,9 +80,11 @@ function Searched() {
           {searchedRecipes.map((recipe) => {
             return(
               <Card key={recipe.id}>
-                <img src={recipe.image} alt={recipe.title} />
-                <a href="#">{recipe.title}</a>
-                <Gradient/>
+                <Link to={'/recipe/' + recipe.id}>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <p>{recipe.title}</p>
+                  <Gradient/>
+                </Link>
               </Card>
             );
           })}

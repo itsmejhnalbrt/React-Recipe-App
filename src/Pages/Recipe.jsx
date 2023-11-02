@@ -3,35 +3,48 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
+const RecipeDetails = styled.section`
+display: flex;
+`;
+
 function Recipe() {
-  const params = useParams();
+  const params = useParams(); 
   const [recipe, setRecipe] = useState();
 
   useEffect(() => {
-    //getRecipe();
-  },[]);
+    getRecipe();
+  }, [params.id]);
 
   const getRecipe = async(e) => {
     const check = localStorage.getItem('testRecipe');
 
     if(check){
       setRecipe(JSON.parse(check));
+      console.log('true'); // TODO: remove when polishing\
     } else{
-      const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`);
+      const api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
       const data = await api.json();
-
       setRecipe(data);
-      console.log(data);
-
-      localStorage.setItem('testRecipe', JSON.stringify(data));
+      localStorage.setItem('testRecipe', JSON.stringify(data)); // TODO: remove every isntance for searched data
     }
   };
+  
+  console.log(recipe);
 
- return (
-    <div>
-      <p>{params.recipe}</p> 
-    </div>
-  )
+  return (
+    <>
+      <RecipeDetails>
+        <div>
+          <h1>{recipe.title}</h1>
+          <img src={recipe.image} alt="" />
+        </div>
+        <div>
+          <button>Instructions</button>
+          <button>Ingerdients</button>
+        </div>
+      </RecipeDetails>
+    </>
+  );
 }
 
 export default Recipe;
