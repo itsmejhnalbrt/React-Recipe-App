@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -47,12 +47,13 @@ function Searched() {
     };
 
     const submitHandler = (e) => { 
-        e.preventDefault();
-        if(search){
-            navigate('/searched/' + search);
-        }else {
-            alert('no input');
+        if(search.trim() === ''){
+            navigate('/');
         }
+        else{
+            navigate('/searched/' + search);
+        }
+        e.preventDefault();
     }; 
 
   return (
