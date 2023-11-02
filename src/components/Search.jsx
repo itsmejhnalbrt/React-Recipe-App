@@ -47,11 +47,10 @@ function Searched() {
     };
 
     const submitHandler = (e) => { 
+        e.preventDefault();
         if(search){
-            e.preventDefault();
             navigate('/searched/' + search);
         }else {
-            e.preventDefault();
             alert('no input');
         }
     }; 
