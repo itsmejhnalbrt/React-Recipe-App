@@ -4,6 +4,7 @@ import {Splide, SplideSlide} from "@splidejs/react-splide";
 import '@splidejs/react-splide/css/skyblue';
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
 margin: 4rem 0rem;
 `;

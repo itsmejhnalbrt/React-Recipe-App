@@ -1,16 +1,18 @@
-/* display: flex;
-align-items: center;
-justify-content: center;
-align-content: center; */
+.form1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
 
-div{
+.div1{
     position: relative;
     width: min(100% - 4rem, 600px);
     min-width: 15rem;
     margin: 1rem 1rem;
 }
 
-input{
+.input1{
     width: 100%;
     background: linear-gradient(35deg, #494949, #313131);
     padding: .5rem 3rem;
@@ -21,7 +23,7 @@ input{
     outline: none;
 }
 
-svg{
+.svg1{
     position: absolute;
     top: 50%;
     left: 0%;
