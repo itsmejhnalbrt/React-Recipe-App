@@ -69,7 +69,6 @@ function Cuisine() {
 
     if(check){
       setCuisine(JSON.parse(check));
-      console.log('true');
     } else{
       const api = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
       const data = await api.json();

@@ -16,19 +16,19 @@ function Recipe() {
   }, [params.id]);
 
   const getRecipe = async(e) => {
-    const check = localStorage.getItem('testRecipe');
+    const check = localStorage.getItem(params.id);
 
-    if(check){
+    if(check){ // TODO: remove when polishing
       setRecipe(JSON.parse(check));
-      console.log('true'); // TODO: remove when polishing\
+      console.log('true'); 
     } else{
       const api = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
       const data = await api.json();
       setRecipe(data);
-      localStorage.setItem('testRecipe', JSON.stringify(data)); // TODO: remove every isntance for searched data
+      localStorage.setItem(params.id, JSON.stringify(data)); // TODO: remove every instance for searched data
     }
-  };
-  
+  }
+
   console.log(recipe);
 
   return (
